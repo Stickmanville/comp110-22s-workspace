@@ -30,4 +30,9 @@ def sub(numbers: list[int], start: int, end: int) -> list[int]:
 
 
 def concat(input_1: list[int], input_2: list[int]) -> list[int]:
-    
+    new_list: list[int] = []
+    for number in input_1:
+        new_list.append(number)
+    for number_2 in input_2:
+        new_list.append(number_2)
+    return new_list
