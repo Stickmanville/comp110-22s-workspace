@@ -4,7 +4,7 @@ from utils import only_evens, sub, concat
 
 
 def test_only_evens_all_evens() -> None:
-    "Use case test given a list of all evens."
+    """Use case test given a list of all evens."""
     xs: list[int] = [2, 4, 6, 8, 10]
     assert only_evens(xs) == [2, 4, 6, 8, 10]
 
