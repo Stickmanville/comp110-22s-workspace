@@ -13,7 +13,7 @@ def only_evens(numbers: list[int]) -> list[int]:
 
 
 def sub(numbers: list[int], start: int, end: int) -> list[int]:
-    """Given a list, spits out a subset of the list."""
+    """Given a list, returns a subset of the list."""
     new_list: list[int] = []
     i: int = start
     if i < 0:
@@ -30,6 +30,7 @@ def sub(numbers: list[int], start: int, end: int) -> list[int]:
 
 
 def concat(input_1: list[int], input_2: list[int]) -> list[int]:
+    """Returns a list from adding two lists together."""
     new_list: list[int] = []
     for number in input_1:
         new_list.append(number)

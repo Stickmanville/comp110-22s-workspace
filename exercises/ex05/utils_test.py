@@ -1,6 +1,6 @@
 """Tests the functions of utils."""
 
-from exercises.ex05.utils import only_evens, sub, concat
+from utils import only_evens, sub, concat
 
 
 def test_only_evens_all_evens() -> None:
