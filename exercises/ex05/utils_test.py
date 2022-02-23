@@ -1,6 +1,6 @@
 """Tests utils."""
 
-from exercises.ex05.utils import only_evens, sub
+from exercises.ex05.utils import only_evens, sub, concat
 
 
 def test_only_evens_all_evens() -> None:
@@ -41,3 +41,6 @@ def test_sub_negative_index() -> None:
 
 def test_concat() -> None:
     """"""
+    list_a: list[int] = [10, 20]
+    list_b: list[int] = [30, 40]
+    assert concat(list_a, list_b) == [10, 20, 30, 40]
