@@ -1,14 +1,12 @@
-"""Dictionary related utility functions."""
+"""EX07. Dictionary related utility functions."""
 
 __author__ = "730332997"
-
-"""Some helpful utility functions for working with CSV files."""
 
 from csv import DictReader
 
 
 def read_csv_rows(filename: str) -> list[dict[str, str]]:
-    """Read the rows of a csv into a 'table'."""
+    """Reads the rows of a csv into a 'table'."""
     result: list[dict[str, str]] = []
     
     # Open a handle to the data file
@@ -28,7 +26,7 @@ def read_csv_rows(filename: str) -> list[dict[str, str]]:
 
 
 def column_values(table: list[dict[str, str]], column: str) -> list[str]:
-    """Produce a list[str] of all values in a single column."""
+    """Produces a list[str] of all values in a single column."""
     result: list[str] = []
     for row in table:
         item: str = row[column]
@@ -37,7 +35,7 @@ def column_values(table: list[dict[str, str]], column: str) -> list[str]:
 
 
 def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
-    """Transform a row-oriented table to a column-oriented table."""
+    """Transform a row-oriented table into a column-oriented table."""
     result: dict[str, list[str]] = {}
     
     first_row: dict[str, str] = row_table[0]
@@ -48,7 +46,7 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 
 
 def head(column_table: dict[str, list[str]], N: int) -> dict[str, list[str]]:
-    """Produces a new column-based table with only the first `N` rows of data for each column."""
+    """Produces a new column-based table with only the first N rows of data for each column."""
     result: dict[str, list[str]] = {}
     for column in column_table:
         chopped_list: list[str] = []
@@ -81,3 +79,14 @@ def concat(table_1: dict[str, list[str]], table_2: dict[str, list[str]]) -> dict
         else:
             result[cn_2] = table_2[cn_2]
     return table_1
+
+
+def count(input: list[str]) -> dict[str, int]:
+    """Given a list, produces a dictionary where each key is a unique value in the given list and each value associated is the number of times that value appeared in the input list."""
+    result: dict[str, int] = {}
+    for item in input:
+        if item in result:
+            result[item] += 1
+        else:
+            result[item] = 1
+    return result
