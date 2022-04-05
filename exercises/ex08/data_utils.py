@@ -1,4 +1,4 @@
-"""EX07. Dictionary related utility functions."""
+"""EX08. Dictionary related utility functions."""
 
 __author__ = "730332997"
 
@@ -90,3 +90,25 @@ def count(input: list[str]) -> dict[str, int]:
         else:
             result[item] = 1
     return result
+
+
+def average(input: list[str]) -> float:
+    """Given a list, converts it into ints and returns the average."""
+    total: int = 0
+    divisor: int = 0
+    output: float = 0
+    for item in input:
+        total += int(item)
+        divisor += 1
+    output = round((total / divisor), 2)
+    return output
+
+
+def ratio(list_1: list[str], list_2: list[str]) -> list[float]:
+    """Given two lists, converts the values into ints, divides each item on the first list by the respective item on the second list, and returns a list of floats."""
+    output: list[float] = []
+    i: int = 0
+    while i <= len(list_1) - 1:
+        output.append(round(int(list_1[i]) / int(list_2[i]), 2))
+        i += 1
+    return output
