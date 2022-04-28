@@ -1,4 +1,4 @@
-"""Ex09. Utility class for numerical operations."""
+"""Utility class for numerical operations."""
 
 from __future__ import annotations
 
@@ -8,6 +8,8 @@ __author__ = "730332997"
 
 
 class Simpy:
+    """Exercise 09. Working with sequences of data."""
+
     values: list[float]
 
     def __init__(self, values: list[float]) -> None:
@@ -43,7 +45,7 @@ class Simpy:
         return sum(self.values)
     
     def __add__(self, rhs: Union[float, Simpy]) -> Simpy:
-        """Produces a new object where each item in its values attribute corresponds to the sum of each item of the original objects at the same index. Produces a new object where each item corresponds to the item at the same index on the left object added to the float if  the right-hand side of an addition expression is a float value."""
+        """Produces a new object that is the sum of each item of the original objects at the same index. If the rhs is a float value, produces a new object that is the sum of each item of the same index on the left object and the float."""
         output: list[float] = []
         for item in range(len(self.values)):
             if isinstance(rhs, Simpy):
@@ -99,11 +101,12 @@ class Simpy:
         return output
 
     def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
-        """Implements the subscription operator."""
+        """Implements the subscription operator if rhs is integer, if its a list[bool], will return filtered values."""
         if isinstance(rhs, int):
             return self.values[rhs]
         else:
+            output: list[float] = []
             for item in range(len(self.values)):
-                if self.values[item] > rhs:
-
-
+                if rhs[item] is True:
+                    output.append(self.values[item])
+            return Simpy(output)
